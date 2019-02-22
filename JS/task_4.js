@@ -1,54 +1,40 @@
 'use strict';
 
 var a = Math.floor(Math.random() * 16);
+var num = '';
 
 switch (a) {
     case 0:
-        console.log('0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15');
-        break;
+        num = '0';
     case 1:
-        console.log('1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15');
-        break;
+      num = num + ' 1';
     case 2:
-        console.log('2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15');
-        break;
+      num = num + ' 2';
     case 3:
-        console.log('3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15');
-        break;
+      num = num + ' 3';
     case 4:
-        console.log('4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15');
-        break;
+      num = num + ' 4';
     case 5:
-        console.log('5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15');
-        break;
+      num = num + ' 5';
     case 6:
-        console.log('6, 7, 8, 9, 10, 11, 12, 13, 14, 15');
-        break;
+      num = num + ' 6';
     case 7:
-        console.log('7, 8, 9, 10, 11, 12, 13, 14, 15');
-        break;
+      num = num + ' 7';
     case 8:
-        console.log('8, 9, 10, 11, 12, 13, 14, 15');
-        break;
+      num = num + ' 8';
     case 9:
-        console.log('9, 10, 11, 12, 13, 14, 15');
-        break;
+      num = num + ' 9';
     case 10:
-        console.log('10, 11, 12, 13, 14, 15');
-        break;
+      num = num + ' 10';
     case 11:
-        console.log('11, 12, 13, 14, 15');
-        break;
+      num = num + ' 11';
     case 12:
-        console.log('12, 13, 14, 15');
-        break;
+      num = num + ' 12';
     case 13:
-        console.log('13, 14, 15');
-        break;
+      num = num + ' 13';
     case 14:
-        console.log('14, 15');
-        break;
+      num = num + ' 14';
     case 15:
-        console.log('15');
+        console.log(num = num + ' 15');
         break;
 }

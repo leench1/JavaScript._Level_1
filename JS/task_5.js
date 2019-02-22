@@ -28,13 +28,8 @@ var divide = function (x_, y_) {
 };
 
 var multiply = function (x_, y_) {
-    if ((x_ != 0) || (y_ != 0)) {
-        let rezult = x_ * y_;
-        return ('Произведение равно: ' + rezult);
-    } else {
-        return 0;
-    }
-
+    let rezult = x_ * y_;
+    return ('Произведение равно: ' + rezult);
 };
 
 console.log(sum(x, y));
