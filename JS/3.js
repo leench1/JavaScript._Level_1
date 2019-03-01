@@ -229,53 +229,27 @@ var works = {
             'Ночное небо прекрасно, видны множества созвездий, кажется, что ночное небо сияет.\n' +
             'Вы понимаете, что сегодня Вы хорошо поработали.\n' +
             'Время уже позднее, пора ложиться спать, завтра предстоит много работы.\n',
-        answer: {},
-        jump: {}
+        answer: {
+            1: 'Введите ',
+            2: ''
+        }
     },
     15: {
         text: 'Вы решили пойти спать.\n' +
             'Сегодня Вы хорошо поработали.\n' +
             'Завтра предстоит ещё много работы, лучше сегодня лечь пораньше.\n',
-        answer: {},
-        jump: {}
+        answer: {
+            1: 'Введите ',
+            2: ''
+        }
     },
 };
 
-var startQuest;
-
-var questions;
-
-var quest = function () {
-    do {
-        startQuest = false;
-        questions = +prompt(works[0].text + works[0].answer[1] + works[0].answer[2] + '-1 для выхода из игры');
-
-        if (questions == -1) {
-            break;
-        } else {
-            let numAnswer = 0;
-            for (var key in works[0].answer) {
-                numAnswer++;
-            }
-            startQuest = chekAnswer(numAnswer, questions);
-        }
-    } while (!startQuest) {
-        if (questions == works[0].jump[1]) {
-            questions = +prompt(works[1].text + works[1].answer[1] + works[1].answer[2] + '-1 для выхода из игры');
-        } else if (questions == works[0].jump[2]) {
-            questions = +prompt(works[2].text + works[2].answer[1] + works[2].answer[2] + '-1 для выхода из игры');
-        } else {
-            startQuest = chekAnswer(numAnswer, questions);
-        }
-    }
-    alert('Спасибо за игру !');
-};
-
-var chekAnswer = function (answer, questions) {
-    if (isNaN(questions) || !isFinite(questions)) {
+var chekAnswer = function (answer) {
+    if (isNaN(answer) || !isFinite(answer)) {
         alert('Вы ввели недопустимый символ');
         return false;
-    } else if (questions < 1 || questions > answer) {
+    } else if (answer < 1 || answer > 2) {
         alert('Ваше число выходит из допустимого диапозона');
         return false;
     }
@@ -284,4 +258,20 @@ var chekAnswer = function (answer, questions) {
     }
 };
 
-quest()
+function start(questionIndex) {
+    let question = works[questionIndex];
+    let answer = +prompt(question.text + question.answer[1] + question.answer[2] + '-1 для выхода из игры');
+let x = false;
+if (answer == -1) {
+    alert('Спасибо за игру, до скорой встречи !!! ');
+} else if (x == chekAnswer(answer)) {
+    alert('Введите значение из списка !');
+    return start(questionIndex);
+} else {
+    start(question.jump[answer]);
+}
+
+}
+
+start(0)
+
