@@ -6,10 +6,10 @@ function changeText() {
 
 // Второе задание
 function changeTag() {
-    var parent = document.querySelector('.insideText1');
-    var child = document.querySelector('#textHello');
+    let parent = document.querySelector('.insideText1');
+    let child = document.querySelector('#textHello');
     parent.removeChild(child);
-    var newHello = document.createElement('h3');
+    let newHello = document.createElement('h3');
     newHello.innerText = 'Hello !!!';
     parent.appendChild(newHello);
 
@@ -17,7 +17,7 @@ function changeTag() {
 
 // Третье задание, реализовал 2 методами, 2 закомментирован.
 function changeList() {
-    var ul_ = document.getElementsByTagName('li');
+    let ul_ = document.getElementsByTagName('li');
     for (let i = 0; i < 4; i++) {
         ul_[i].innerText = 'list' + (i +1);
     }
@@ -27,7 +27,7 @@ function changeList() {
     Более сложный вариант, но тоже работает.
 
 
-    var dogFragment = document.createDocumentFragment();
+    let dogFragment = document.createDocumentFragment();
 
     while (ul_.lastChild) {
         ul_.removeChild(ul_.lastChild)
@@ -46,6 +46,8 @@ function plus() {
 
 let method = document.getElementsByTagName('span')[0];
 let rezult = document.getElementsByTagName('span')[1];
+    let x = document.getElementById('x');
+    let y = document.getElementById('y');
 
     let sum = +x.value + +y.value;
         rezult.innerText = sum;
@@ -56,6 +58,8 @@ function minus() {
 
     let method = document.getElementsByTagName('span')[0];
     let rezult = document.getElementsByTagName('span')[1];
+    let x = document.getElementById('x');
+    let y = document.getElementById('y');
 
     let minus = +x.value - +y.value;
     rezult.innerText = minus;
@@ -66,6 +70,8 @@ function multiply() {
 
     let method = document.getElementsByTagName('span')[0];
     let rezult = document.getElementsByTagName('span')[1];
+    let x = document.getElementById('x');
+    let y = document.getElementById('y');
 
     let multiply = +x.value * +y.value;
     rezult.innerText = multiply;
@@ -76,6 +82,8 @@ function divide() {
 
     let method = document.getElementsByTagName('span')[0];
     let rezult = document.getElementsByTagName('span')[1];
+    let x = document.getElementById('x');
+    let y = document.getElementById('y');
 
     let divide = +x.value / +y.value;
     rezult.innerText = divide;
